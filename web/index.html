@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <base href="/">
+
+    <meta charset="UTF-8">
+    <meta content="IE=Edge" http-equiv="X-UA-Compatible">
+    <meta name="description" content="Online Food application">
+
+    <!-- iOS meta tags & icons -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="online_food">
+    <link rel="apple-touch-icon" href="icons/Icon-192.png">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png"/>
+
+    <title>online_food</title>
+    <link rel="manifest" href="manifest.json">
+
+    <style>
+        .logo{
+            width: 400px;
+            height: 300px;
+        }
+        .loading-scr{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 100vh;
+            width: 100%;
+            background: #ffffff;
+        }
+        .load-bar{
+            width: 400px;
+            height: 6px;
+            position: relative;
+            overflow: hidden;
+            background: #cfcfcf;
+            margin-top: 22px;
+        }
+        .load-bar::before{
+            content: "";
+            width: 200px;
+            height: 6px;
+            position: absolute;
+            left: -1px;
+            background: #21bfbd;
+            animation: loadBar 1.5s infinite ease;
+        }
+
+        /*-- load bar animation CSS--*/
+        @keyframes loadBar {
+            50%{
+                left: 200px;
+            }
+        }
+
+
+    </style>
+
+</head>
+<body>
+<div class="loading-scr">
+    <div class="loading-animation">
+        <img src="logo.png" alt="logo" class="logo">
+        <div class="load-bar"></div>
+    </div>
+</div>
+
+<script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('flutter-first-frame', function () {
+        navigator.serviceWorker.register('flutter_service_worker.js');
+      });
+    }
+
+
+</script>
+<script src="main.dart.js" type="application/javascript"></script>
+</body>
+</html>
