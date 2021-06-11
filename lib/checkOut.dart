@@ -28,7 +28,7 @@ class _CheckOutPageState extends State<CheckOutPage> {
           ),
           backgroundColor: Colors.transparent,
           elevation: 0.0,
-          title: Text('Invoice',
+          title: Text('INVOICE',
               style: TextStyle(
                   fontFamily: 'Montserrat',
                   fontSize: 18.0,
